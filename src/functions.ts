@@ -1,7 +1,7 @@
 import qs from 'qs';
 import { z } from 'zod';
 
-export function encode<T>(data: T, options: qs.IStringifyOptions = { indices: false }): string {
+export function encode<T>(data: T, options: qs.IStringifyOptions = { indices: true }): string {
 	return qs.stringify(data, options);
 }
 
