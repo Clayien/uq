@@ -1,0 +1,24 @@
+{
+	"name": "@clayien/uq",
+	"version": "0.0.1",
+	"description": "URL query parser with validation",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsup",
+		"format": "prettier . --write"
+	},
+	"author": "SymphonySimper",
+	"license": "MIT",
+	"dependencies": {
+		"@types/qs": "^6.9.14",
+		"qs": "^6.12.0",
+		"zod": "^3.22.4"
+	},
+	"devDependencies": {
+		"prettier": "^3.2.5",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.4"
+	}
+}
