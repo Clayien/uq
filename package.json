@@ -1,6 +1,6 @@
 {
 	"name": "@clayien/uq",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "URL query parser with validation",
 	"private": false,
 	"publishConfig": {
