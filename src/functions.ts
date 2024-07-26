@@ -14,3 +14,5 @@ export function parse<T extends z.ZodSchema>(
 
 	return schema.parse(result);
 }
+
+export { z } from 'zod';
