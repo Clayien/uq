@@ -1,7 +1,12 @@
 src/
 node_modules/
+.direnv/
 
 tsconfig.json
 tsup.config.ts
 .prettierrc
 .prettierignore
+
+flake.*
+.envrc
+justfile
