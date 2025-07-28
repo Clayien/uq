@@ -1,11 +1,19 @@
 {
 	"compilerOptions": {
-		"esModuleInterop": true,
-		"skipLibCheck": true,
+		"target": "esnext",
+		"lib": ["es2023", "DOM"],
+		"moduleDetection": "force",
+		"module": "preserve",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"types": [],
 		"strict": true,
-		"outDir": "dist",
-		"moduleResolution": "node"
+		"noUnusedLocals": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"skipLibCheck": true
 	},
-	"include": ["src"],
-	"exclude": ["node_modules"]
+	"include": ["src"]
 }

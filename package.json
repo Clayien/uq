@@ -1,29 +1,35 @@
 {
 	"name": "@clayien/uq",
-	"version": "0.1.33",
+	"version": "0.2.0",
 	"description": "URL query parser with validation",
 	"private": false,
 	"publishConfig": {
 		"access": "public"
 	},
-	"main": "./dist/index.js",
+	"main": "./dist/index.mjs",
 	"module": "./dist/index.mjs",
-	"types": "./dist/index.d.ts",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": "./dist/index.mjs",
+		"./package.json": "./package.json"
+	},
 	"scripts": {
-		"build": "tsup",
+		"build": "tsdown",
 		"format": "prettier . --write",
 		"pub": "npm run build && npm publish"
 	},
 	"author": "SymphonySimper",
 	"license": "MIT",
 	"peerDependencies": {
-		"qs": "^6.12.0",
-		"zod": "^3.22.4"
+		"qs": "^6.12.0"
 	},
 	"devDependencies": {
 		"@types/qs": "^6.9.16",
 		"prettier": "^3.2.5",
-		"tsup": "^8.0.2",
+		"tsdown": "^0.13.0",
 		"typescript": "^5.4.4"
+	},
+	"dependencies": {
+		"@standard-schema/spec": "^1.0.0"
 	}
 }
