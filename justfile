@@ -14,3 +14,6 @@ update:
     git add package.json package-lock.json
     git commit -m "feat: update packages"
     npm version patch
+
+update-flake:
+    nix flake update
