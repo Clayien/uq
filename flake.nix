@@ -4,22 +4,25 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     systems.url = "github:nix-systems/default";
-    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
   outputs =
-    { flake-parts, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = (import inputs.systems);
-      perSystem =
+    { ... }@inputs:
+    let
+      forAllSystems =
+        f:
+        inputs.nixpkgs.lib.genAttrs (import inputs.systems) (
+          system:
+          f {
+            pkgs = import inputs.nixpkgs { inherit system; };
+          }
+        );
+    in
+    {
+      devShells = forAllSystems (
+        { pkgs }:
         {
-          config,
-          pkgs,
-          lib,
-          ...
-        }:
-        {
-          devShells.default = pkgs.mkShell {
+          default = pkgs.mkShell {
             buildInputs = [
               pkgs.bashInteractive # do not remove
             ];
@@ -31,6 +34,7 @@
               corepack
             ];
           };
-        };
+        }
+      );
     };
 }
